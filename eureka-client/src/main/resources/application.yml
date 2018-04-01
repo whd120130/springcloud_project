@@ -1,9 +1,19 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8080/eureka/,http://localhost:8081/eureka
+      defaultZone: http://localhost:8080/eureka,http://localhost:8081/eureka
+########  以上是解决容灾问题，当一个服务器挂了，会自动连接下一个服务器
 server:
   port: 8090
 spring:
   application:
     name: eureka-client
+
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+queue-name: whdhello
